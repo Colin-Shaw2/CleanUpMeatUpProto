@@ -83,14 +83,15 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsPage()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsPage(), fullscreenDialog: true));
+    
       },
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
       bottomNavigationBar: ListTile(title: Text("Joined Events"),
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => JoinedEventPage()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => JoinedEventPage(), fullscreenDialog: true));
       },),
     );
   }
