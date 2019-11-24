@@ -2,6 +2,7 @@ import 'package:clean_up_meet_p/pages/joinedEvents.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/detailsPage.dart';
+import 'pages/inProgressEvents.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Clean-Up Meet-Up'),
     );
   }
 }
@@ -78,21 +79,27 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+
+            //  Image
+            Padding(
+              padding: EdgeInsets.only(top: 1.0, bottom: 1.0),
+              child: Image.asset("lib/resources/title.png", scale: 0.65), // Tweet image
+            ),
+
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsPage(), fullscreenDialog: true));
-    
+        Navigator.push(context, MaterialPageRoute(builder: (context) => InProgressEvents('In Progress Page'), fullscreenDialog: true));
       },
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
-      bottomNavigationBar: ListTile(title: Text("Joined Events"),
-      onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => JoinedEventPage(), fullscreenDialog: true));
-      },),
+      // bottomNavigationBar: ListTile(title: Text("Joined Events"),
+      // onTap: (){
+      //   Navigator.push(context,  MaterialPageRoute(builder: (context) => DetailsPage(), fullscreenDialog: true));
+      // },),
     );
   }
 }
