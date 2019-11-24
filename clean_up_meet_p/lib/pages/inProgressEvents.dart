@@ -26,12 +26,8 @@ class InProgressEventsState extends State<InProgressEvents> {
            key: _scaffoldKey,
 
       appBar: AppBar(
-<<<<<<< HEAD
-        title: Text("Upcoming Cleanup Events"),
-=======
         backgroundColor: Colors.tealAccent[700],
-        title: Text("In Progress Cleanup Events"),
->>>>>>> 7e195753491d45ee34cbd2e03aa1889698dc47f1
+        title: Text("Cleanup Events"),
         
       ),
       
@@ -119,14 +115,8 @@ class InProgressEventsState extends State<InProgressEvents> {
 									    ),
 									    onPressed: () {
 									    	setState(() {
-<<<<<<< HEAD
-                           Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsPage(), fullscreenDialog: true));
-      
-									    	  debugPrint("Prev clicked");
-=======
                           Navigator.push(context,  MaterialPageRoute(builder: (context) => DetailsPage(), fullscreenDialog: true));
 									    	  debugPrint("Details clicked");
->>>>>>> 7e195753491d45ee34cbd2e03aa1889698dc47f1
 									    	});
 									    },
 								    ),
