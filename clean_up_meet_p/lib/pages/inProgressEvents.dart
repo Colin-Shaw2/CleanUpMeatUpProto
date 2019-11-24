@@ -1,3 +1,4 @@
+import 'package:clean_up_meet_p/pages/joinedEvents.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import './detailsPage.dart';
@@ -52,7 +53,7 @@ class InProgressEventsState extends State<InProgressEvents> {
                   ],
                 ),
             ),
-
+                   
             // Location
             Padding(
               padding: EdgeInsets.all(10.0),
@@ -62,6 +63,17 @@ class InProgressEventsState extends State<InProgressEvents> {
                     Text("Location: ", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[700], fontSize: 18)),
                     Text("Ottawa University ", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black, fontSize: 18)),
                   ],
+                ),
+            ),
+
+            
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[ 
+                    Text("Ongoing!   3 Hours Left!", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey, fontSize: 18)),
+],
                 ),
             ),
 
@@ -272,7 +284,7 @@ class InProgressEventsState extends State<InProgressEvents> {
 									    ),
 									    onPressed: () {
 									    	setState(() {
-                          Navigator.push(context,  MaterialPageRoute(builder: (context) => DetailsPage(), fullscreenDialog: true));
+                          Navigator.push(context,  MaterialPageRoute(builder: (context) => JoinedPage(), fullscreenDialog: true));
 									    	  debugPrint("Joined clicked");
 									    	});
 									    },
