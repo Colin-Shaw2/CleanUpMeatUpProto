@@ -24,7 +24,7 @@ class InProgressEventsState extends State<InProgressEvents> {
      return Scaffold(
 
       appBar: AppBar(
-        title: Text("In Progress Cleanup Events"),
+        title: Text("Upcoming Cleanup Events"),
         
       ),
       
@@ -112,6 +112,8 @@ class InProgressEventsState extends State<InProgressEvents> {
 									    ),
 									    onPressed: () {
 									    	setState(() {
+                           Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsPage(), fullscreenDialog: true));
+      
 									    	  debugPrint("Prev clicked");
 									    	});
 									    },
@@ -302,18 +304,6 @@ class InProgressEventsState extends State<InProgressEvents> {
 
         
       ),
-
-    
-      floatingActionButton: FloatingActionButton(
-              backgroundColor: Colors.tealAccent[700],
-              heroTag: 'unq2',
-              onPressed: () {
-                debugPrint('Pressed +');
-              },
-              tooltip: '+',
-              child: Icon(Icons.add),
-            ),
-      
     
       
     );

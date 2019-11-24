@@ -1,4 +1,4 @@
-import 'package:clean_up_meet_p/pages/joinedEvents.dart';
+//import 'package:clean_up_meet_p/pages/joinedEvents.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/detailsPage.dart';
@@ -75,7 +75,13 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
+      body: GestureDetector(
+        onTap: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context) => InProgressEvents('In Progress Page'), fullscreenDialog: true));
+     
+        },
+        child:
+        Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -89,17 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => InProgressEvents('In Progress Page'), fullscreenDialog: true));
-      },
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-      // bottomNavigationBar: ListTile(title: Text("Joined Events"),
-      // onTap: (){
-      //   Navigator.push(context,  MaterialPageRoute(builder: (context) => DetailsPage(), fullscreenDialog: true));
-      // },),
+      ),
     );
   }
 }
