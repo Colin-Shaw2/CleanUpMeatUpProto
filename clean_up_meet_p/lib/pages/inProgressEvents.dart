@@ -17,14 +17,21 @@ class InProgressEvents extends StatefulWidget {
 class InProgressEventsState extends State<InProgressEvents> {
 
   InProgressEventsState(String appBarTitle);
+  var _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
   
-     return Scaffold(
+          return Scaffold(
+           key: _scaffoldKey,
 
       appBar: AppBar(
+<<<<<<< HEAD
         title: Text("Upcoming Cleanup Events"),
+=======
+        backgroundColor: Colors.tealAccent[700],
+        title: Text("In Progress Cleanup Events"),
+>>>>>>> 7e195753491d45ee34cbd2e03aa1889698dc47f1
         
       ),
       
@@ -112,9 +119,14 @@ class InProgressEventsState extends State<InProgressEvents> {
 									    ),
 									    onPressed: () {
 									    	setState(() {
+<<<<<<< HEAD
                            Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsPage(), fullscreenDialog: true));
       
 									    	  debugPrint("Prev clicked");
+=======
+                          Navigator.push(context,  MaterialPageRoute(builder: (context) => DetailsPage(), fullscreenDialog: true));
+									    	  debugPrint("Details clicked");
+>>>>>>> 7e195753491d45ee34cbd2e03aa1889698dc47f1
 									    	});
 									    },
 								    ),
@@ -133,7 +145,18 @@ class InProgressEventsState extends State<InProgressEvents> {
 									    ),
 									    onPressed: () {
 									    	setState(() {
-									    	  debugPrint("Prev clicked");
+                          final snackBar = SnackBar(
+                            elevation: 6.0,
+                            backgroundColor: Colors.tealAccent[700],
+                            //behavior: SnackBarBehavior.floating,
+                            duration: const Duration(seconds: 1),
+                            content: Text(
+                              "JOINED",
+                              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 18),
+                            ),
+                          );
+									    	  debugPrint("Join clicked");
+                           _scaffoldKey.currentState.showSnackBar(snackBar);
 									    	});
 									    },
 								    ),
@@ -205,7 +228,8 @@ class InProgressEventsState extends State<InProgressEvents> {
 									    ),
 									    onPressed: () {
 									    	setState(() {
-									    	  debugPrint("Prev clicked");
+                          Navigator.push(context,  MaterialPageRoute(builder: (context) => DetailsPage(), fullscreenDialog: true));
+									    	  debugPrint("Details clicked");
 									    	});
 									    },
 								    ),
@@ -312,6 +336,11 @@ class InProgressEventsState extends State<InProgressEvents> {
 
 
 }
+
+  // void _showSnackBar(BuildContext context, String message) {
+  //   final snackBar = SnackBar(content: Text(message));
+  //   Scaffold.of(context).showSnackBar(snackBar);
+  // }
 
 
 

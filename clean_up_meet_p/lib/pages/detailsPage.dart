@@ -2,11 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DetailsPage extends StatelessWidget {
+
+  var _scaffoldKey = new GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
+        backgroundColor: Colors.tealAccent[700],
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text("Details Page"),
@@ -136,7 +141,21 @@ class DetailsPage extends StatelessWidget {
                         child: Text("JOIN"),
                         color: Colors.green[400],
                         textColor: Colors.white,
-                        onPressed: () {},
+                        onPressed: () {
+                            final snackBar = SnackBar(
+                            elevation: 6.0,
+                            backgroundColor: Colors.tealAccent[700],
+                            //behavior: SnackBarBehavior.floating,
+                            duration: const Duration(seconds: 1),
+                            content: Text(
+                              "JOINED",
+                              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 18),
+                            ),
+                          );
+									    	  debugPrint("Join clicked");
+                           _scaffoldKey.currentState.showSnackBar(snackBar);  
+
+                        },
                       ),
                     )
                   ],
