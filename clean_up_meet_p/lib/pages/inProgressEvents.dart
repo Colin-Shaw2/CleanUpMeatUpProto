@@ -72,7 +72,7 @@ class InProgressEventsState extends State<InProgressEvents> {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[ 
-                    Text("Ongoing!   3 Hours Left!", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey, fontSize: 18)),
+                    Text("Ongoing!   3 Hours Left!", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.yellow[600], fontSize: 18)),
 ],
                 ),
             ),

@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DetailsPage extends StatelessWidget {
-
   var _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
@@ -110,8 +109,10 @@ class DetailsPage extends StatelessWidget {
                   alignment: Alignment.topLeft,
                   child: Text("-Gloves\n-Garbage\n"),
                 ),
-                Image.asset("lib/resources/going.png",),
-                Row(  
+                Image.asset(
+                  "lib/resources/going.png",
+                ),
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Container(
@@ -139,22 +140,24 @@ class DetailsPage extends StatelessWidget {
                     Expanded(
                       child: RaisedButton(
                         child: Text("JOIN"),
-                        color: Colors.green[400],
+                        color: Colors.tealAccent[700],
                         textColor: Colors.white,
                         onPressed: () {
-                            final snackBar = SnackBar(
+                          final snackBar = SnackBar(
                             elevation: 6.0,
                             backgroundColor: Colors.tealAccent[700],
                             //behavior: SnackBarBehavior.floating,
                             duration: const Duration(seconds: 1),
                             content: Text(
                               "JOINED",
-                              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 18),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 18),
                             ),
                           );
-									    	  debugPrint("Join clicked");
-                           _scaffoldKey.currentState.showSnackBar(snackBar);  
-
+                          debugPrint("Join clicked");
+                          _scaffoldKey.currentState.showSnackBar(snackBar);
                         },
                       ),
                     )
@@ -168,4 +171,3 @@ class DetailsPage extends StatelessWidget {
     );
   }
 }
-
